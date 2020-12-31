@@ -18,6 +18,8 @@ You can apply this patch in all supported CDK programming languages:
 
 ## JavaScript/TypeScript
 
+> See [example](./examples/typescript).
+
 Install using npm/yarn:
 
 ```shell
@@ -36,10 +38,18 @@ const app = new cdk.App();
 
 ## Python
 
+> See [example](./examples/python).
+
 Add this to your `requirements.txt`:
 
 ```txt
 awscdk-81-patch
+```
+
+Install:
+
+```sh
+pip install -r requirements.txt
 ```
 
 Add this to your `app.py`:
@@ -59,11 +69,13 @@ Add this to your `pom.xml` file:
 
 ```xml
 <dependencies>
+
   <dependency>
       <groupId>com.github.eladb</groupId>
       <artifactId>awscdk-81-patch</artifactId>
       <version>1.0.0</version>
   </dependency>
+  
 </dependencies>
 ```
 
@@ -85,6 +97,7 @@ public static void main(final String[] args) { {
 Install this module:
 
 ```shell
+cd src/MyProject # go to where your .csproj file resides
 dotnet add package Eladb.AwsCdk81Patch
 ```
 
@@ -95,7 +108,7 @@ using Eladb.AwsCdk81Patch;
 
 public static void Main(string[] args)
 {
-    Patch.apply();
+    Patch.Apply();
 
     var app = new App();
     // ...
