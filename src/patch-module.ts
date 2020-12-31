@@ -23,7 +23,7 @@ export function patchModule(module: string, expectedVersion: string) {
   const dockerfile = join(layerdir, 'Dockerfile');
   if (!existsSync(layerdir)) {
     mkdirSync(layerdir);
-    writeFileSync(dockerfile, '# dummy');
+    writeFileSync(dockerfile, `# dummy${module}`);
     console.error(LOG_PREFIX + `created ${dockerfile}`);
   } else {
     console.error(LOG_PREFIX + `skipped ${dockerfile}`);
