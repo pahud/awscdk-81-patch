@@ -15,8 +15,12 @@ export function patchModule(module: string, expectedVersion: string) {
   }
 
   const layerdir = join(dirname(moduleRoot), 'layer');
+  const dockerfile = join(layerdir, 'Dockerfile');
   if (!existsSync(layerdir)) {
     mkdirSync(layerdir);
-    writeFileSync(join(layerdir, 'Dockerfile'), '# dummy');
+    writeFileSync(dockerfile, '# dummy');
+    console.error(`awscdk-81-patch: created ${dockerfile}`);
+  } else {
+    console.error(`awscdk-81-patch: skipped ${dockerfile}`);
   }
 }
