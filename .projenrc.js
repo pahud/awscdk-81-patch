@@ -1,6 +1,7 @@
 const { JsiiProject } = require('projen');
 const consts = require('./consts.json');
 const EXPECTED_VERSION = consts['cdk-version'];
+const MODULES = consts.modules;
 
 const project = new JsiiProject({
   author: 'Elad Ben-Israel',
@@ -9,6 +10,7 @@ const project = new JsiiProject({
   repositoryUrl: 'https://github.com/eladb/awscdk-81-patch.git',
   defaultReleaseBranch: 'main',
 
+  peerDeps: MODULES.map(m => `${m}@${EXPECTED_VERSION}`),
   devDeps: [
     '@aws-cdk/aws-s3-deployment',
     '@aws-cdk/aws-eks',

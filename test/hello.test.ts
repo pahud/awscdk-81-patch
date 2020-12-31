@@ -8,11 +8,9 @@ import { Patch } from '../src';
 import { patchModule } from '../src/patch-module';
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const EXPECTED_VERSION = require('../consts.json')['cdk-version'];
-const MODULES = [
-  '@aws-cdk/lambda-layer-awscli',
-  '@aws-cdk/lambda-layer-kubectl',
-];
+const consts = require('../consts.json');
+const EXPECTED_VERSION = consts['cdk-version'];
+const MODULES: string[] = consts.modules;
 
 beforeEach(() => cleanup());
 afterEach(() => cleanup());

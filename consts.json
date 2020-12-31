@@ -1,3 +1,7 @@
 {
-  "cdk-version": "1.81.0"
+  "cdk-version": "1.81.0",
+  "modules": [
+    "@aws-cdk/lambda-layer-awscli",
+    "@aws-cdk/lambda-layer-kubectl"
+  ]
 }

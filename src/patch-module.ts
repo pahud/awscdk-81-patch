@@ -1,11 +1,16 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 
+const LOG_PREFIX = 'awscdk-81-patch:';
+
 export function patchModule(module: string, expectedVersion: string) {
   let moduleRoot;
   try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    require(module); // ensure the module is loaded
     moduleRoot = require.resolve(module + '/package.json');
   } catch (e) {
+    console.error(LOG_PREFIX + `${module} not found. patch skipped`);
     return; // module not in closure
   }
 
@@ -19,8 +24,8 @@ export function patchModule(module: string, expectedVersion: string) {
   if (!existsSync(layerdir)) {
     mkdirSync(layerdir);
     writeFileSync(dockerfile, '# dummy');
-    console.error(`awscdk-81-patch: created ${dockerfile}`);
+    console.error(LOG_PREFIX + `created ${dockerfile}`);
   } else {
-    console.error(`awscdk-81-patch: skipped ${dockerfile}`);
+    console.error(LOG_PREFIX + `skipped ${dockerfile}`);
   }
 }
