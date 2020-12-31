@@ -1,0 +1,23 @@
+{
+  "name": "typescript",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/node": "10.17.27",
+    "aws-cdk": "1.81.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-eks": "^1.81.0",
+    "@aws-cdk/aws-s3": "^1.81.0",
+    "@aws-cdk/aws-s3-deployment": "^1.81.0",
+    "@aws-cdk/core": "1.81.0",
+    "awscdk-81-patch": "^1.0.1"
+  }
+}
