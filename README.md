@@ -9,11 +9,14 @@ We apologize for this. Until we are able to release a patch, you can use this
 tool to apply a patch to the relevant modules. This patch will only work if you
 are using v1.81.0 and will need to get removed in the future.
 
-## Usage
+You can apply this patch in all supported CDK programming languages:
 
-This patch is provided for all CDK programming languages.
+* [JavaScript/TypeScript](#javascripttypescript)
+* [Java](#java)
+* [Python](#python)
+* [.NET](#net)
 
-### JavaScript/TypeScript
+## JavaScript/TypeScript
 
 Install using npm/yarn:
 
@@ -31,7 +34,7 @@ const app = new cdk.App();
 // ....
 ```
 
-### Python
+## Python
 
 Add this to your `requirements.txt`:
 
@@ -50,7 +53,7 @@ app = core.App()
 # ...
 ```
 
-### Java
+## Java
 
 Add this to your `pom.xml` file:
 
@@ -77,7 +80,7 @@ public static void main(final String[] args) { {
 }
 ```
 
-### .NET
+## .NET
 
 Install this module:
 
