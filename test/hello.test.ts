@@ -46,7 +46,7 @@ describe('patchModule()', () => {
     patchModule(module, EXPECTED_VERSION);
     const dockerfile = tryFindDummyDockerfile(module);
     expect(dockerfile).toBeDefined();
-    expect(readFileSync(dockerfile!, 'utf8')).toStrictEqual('# dummy');
+    expect(readFileSync(dockerfile!, 'utf8')).toStrictEqual(`# dummy${module}`);
   });
 
   test('does not fail if the module is not in the closure', () => {
