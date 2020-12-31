@@ -73,9 +73,9 @@ Add this to your `pom.xml` file:
   <dependency>
       <groupId>com.github.eladb</groupId>
       <artifactId>awscdk-81-patch</artifactId>
-      <version>1.0.0</version>
+      <version>LATEST</version>
   </dependency>
-  
+
 </dependencies>
 ```
 
