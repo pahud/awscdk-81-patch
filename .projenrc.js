@@ -15,10 +15,21 @@ const project = new JsiiProject({
     '@aws-cdk/core',
   ].map(m => `${m}@${EXPECTED_VERSION}`),
 
-  /* JsiiProjectOptions */
-  // dotnet: undefined,                                                        /* Publish to NuGet. */
-  // java: undefined,                                                          /* Publish to maven. */
-  // python: undefined,                                                        /* Publish to pypi. */
+  java: {
+    javaPackage: 'com.github.eladb.awscdk81patch',
+    mavenGroupId: 'com.github.eladb',
+    mavenArtifactId: 'awscdk-81-patch',
+  },
+
+  python: {
+    distName: 'awscdk-81-patch',
+    module: 'awscdk_81_patch',
+  },
+
+  dotnet: {
+    dotNetNamespace: 'Eladb.AwsCdk81Patch',
+    packageId: 'Eladb.AwsCdk81Patch',
+  },
 });
 
 project.synth();
