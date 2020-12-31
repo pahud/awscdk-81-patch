@@ -57,7 +57,7 @@
   "bundledDependencies": [],
   "main": "lib/index.js",
   "license": "Apache-2.0",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "jest": {
     "clearMocks": true,
     "collectCoverage": true,
@@ -92,7 +92,23 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "java": {
+        "package": "com.github.eladb.awscdk81patch",
+        "maven": {
+          "groupId": "com.github.eladb",
+          "artifactId": "awscdk-81-patch"
+        }
+      },
+      "python": {
+        "distName": "awscdk-81-patch",
+        "module": "awscdk_81_patch"
+      },
+      "dotnet": {
+        "namespace": "Eladb.AwsCdk81Patch",
+        "packageId": "Eladb.AwsCdk81Patch"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"

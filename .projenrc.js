@@ -7,6 +7,7 @@ const project = new JsiiProject({
   authorAddress: 'benisrae@amazon.com',
   name: 'awscdk-81-patch',
   repositoryUrl: 'https://github.com/eladb/awscdk-81-patch.git',
+  defaultReleaseBranch: 'main',
 
   devDeps: [
     '@aws-cdk/aws-s3-deployment',
