@@ -65,6 +65,8 @@ app = core.App()
 
 ## Java
 
+> See [example](./examples/java).
+
 Add this to your `pom.xml` file:
 
 ```xml
